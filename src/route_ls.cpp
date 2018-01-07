@@ -77,6 +77,6 @@ void RouteLS::GenerateRouteMsg() {
 
     std::string ad_str(ad.GetSerializedMsg());
     for (std::size_t i = 0; i < cost.size(); i++)
-        if (cost[i] != UNREACHABLE && i != static_cast<std::size_t>(node_))
+        if (i != static_cast<std::size_t>(node_))
             msg_to_send_.push(std::make_pair(args->GetIp(i), ad_str));
 }
