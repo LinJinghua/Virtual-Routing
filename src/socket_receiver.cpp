@@ -29,7 +29,7 @@ SocketReceiver::SocketReceiver() {
     bzero(&server_addr, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(SERVER_PORT);
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_addr.sin_addr.s_addr = inet_addr("0.0.0.0");
 
     // bind socket
     if (-1 == (bind(server_socket_fd, (struct sockaddr *)&server_addr,

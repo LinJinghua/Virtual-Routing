@@ -13,8 +13,8 @@ int main(int argc, char **argv) {
     RouteNode node;
     node.SetActionMode(ActionMode::NORMAL);
     node.SetRouteAlgoType(RouteAlgoType::LS);
+    // node.SetRouteAlgoType(RouteAlgoType::DV);
     node.Start(std::stoi(argv[1]));
-    // node.Start(0);
     std::this_thread::sleep_for(std::chrono::seconds(3600));
     node.Stop();
     return 0;
