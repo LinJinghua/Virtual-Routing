@@ -53,7 +53,7 @@ int RouteDV::UpdateRouteMsg(const std::string& raw_msg_str) {
     DV dv(msg.dv.size(), UNREACHABLE);
     for (const auto& n : msg.dv)
         dv[args->GetNode(n.first)] = n.second;
-    intfes_.Set(from, dv[node_]);
+    intfes_.Set(from, args->GetInterfaces(node_)[from]);
 
     dv_.Set(from, dv);
     if (dv_.Update(node_, intfes_.Get(), route_table_))
